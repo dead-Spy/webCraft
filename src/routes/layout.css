@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-bg-base: #050505;
+  --color-bg-surface: #0a0a0a;
+  --color-bg-glass: rgba(5, 5, 5, 0.6);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #525252;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-accent: #3b82f6;
+  --color-hover-bg: #111111;
+}
+
+:root.light {
+  --color-bg-base: #f9f9f9;
+  --color-bg-surface: #ffffff;
+  --color-bg-glass: rgba(249, 249, 249, 0.6);
+  --color-text-primary: #050505;
+  --color-text-secondary: #525252;
+  --color-text-muted: #a3a3a3;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-accent: #2563eb;
+  --color-hover-bg: #f3f4f6;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.serif-text {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+button,
+input,
+textarea {
+  font-family: var(--font-sans);
+}
+
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="text-scale" content="scale" />
+        %sveltekit.head%
+        <script type="text/javascript">
+            (function (C, A, L) { _cal = C[A] || function () { var a = arguments; (_cal.q = _cal.q || []).push(a) }; L = document.createElement("script"); L.async = 1; L.src = "https://cal.com/embed/embed.js"; document.head.appendChild(L); })(window, "Cal");
+            Cal("init", "discovery", { origin: "https://cal.com" });
+            Cal.ns.discovery("ui", {"theme":"dark","styles":{"etchedChanged":true},"hideEventTypeDetails":false,"layout":"month_view"});
+            Cal("init", "retainer", { origin: "https://cal.com" });
+            Cal.ns.retainer("ui", {"theme":"dark","styles":{"etchedChanged":true},"hideEventTypeDetails":false,"layout":"month_view"});
+        </script>
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
+</html>
